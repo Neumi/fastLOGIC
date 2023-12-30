@@ -1,5 +1,5 @@
-# fastLOGIC!
-## A cost-effective Arduino-based board designed for simple industrial control, used for small-scale automation and process control applications.
+# fastLOGIC! open source industrial controller
+## A cost-effective Arduino-based board designed for simple industrial control used for small-scale automation and process control applications.
 
 Code and test results come later. This project is still in progress and not production-ready! Stay tuned!
 

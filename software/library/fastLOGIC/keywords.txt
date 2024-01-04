@@ -1,33 +1,32 @@
-  
-#######################################
-# Syntax Coloring Map For 
-#######################################
-
-#######################################
-# Datatypes (KEYWORD1)
-#######################################
-
-#######################################
-# Methods and Functions (KEYWORD2)
-#######################################
-setMaxAngle		KEYWORD2
-getMaxAngle		KEYWORD2
-setStartPosition		KEYWORD2
-getStartPosition		KEYWORD2
-setEndPosition  	KEYWORD2
-getEndPosition		KEYWORD2
-getRawAngle 	KEYWORD2
-getScaledAngle	KEYWORD2
-detectMagnet	KEYWORD2
-getMagnetStrength	KEYWORD2
-getAgc  	KEYWORD2
-getMagnitude		KEYWORD2
-getConf		KEYWORD2
-setConf		KEYWORD2
-getBurnCount		KEYWORD2
-burnAngle		KEYWORD2
-burnMaxAngleAndConfig		KEYWORD2
-setOutPut		KEYWORD2
-#######################################
-# Constants (LITERAL1)
-#######################################
+fastLogic.KEYWORD1=fastLogic
+fastLogic.KEYWORD2=ButtonType
+fastLogic.KEYWORD3=begin
+fastLogic.KEYWORD4=refreshInputData
+fastLogic.KEYWORD5=getTemperature
+fastLogic.KEYWORD6=getInputVoltage
+fastLogic.KEYWORD7=getAnalogInputA
+fastLogic.KEYWORD8=getAnalogInputB
+fastLogic.KEYWORD9=getDigitalInputA
+fastLogic.KEYWORD10=getDigitalInputB
+fastLogic.KEYWORD11=getButtonInput
+fastLogic.KEYWORD12=setRelayAState
+fastLogic.KEYWORD13=setRelayBState
+fastLogic.KEYWORD14=getRelayAState
+fastLogic.KEYWORD15=getRelayBState
+fastLogic.KEYWORD16=setLedAState
+fastLogic.KEYWORD17=setLedBState
+fastLogic.KEYWORD18=getLedAState
+fastLogic.KEYWORD19=getLedBState
+fastLogic.KEYWORD20=DIGITAL_IN_A
+fastLogic.KEYWORD21=DIGITAL_IN_B
+fastLogic.KEYWORD22=RELAY_A_OUT
+fastLogic.KEYWORD23=RELAY_B_OUT
+fastLogic.KEYWORD24=TM1637_SCK
+fastLogic.KEYWORD25=TM1637_DIO
+fastLogic.KEYWORD26=DS18B20_DATA
+fastLogic.KEYWORD27=LED_B_OUT
+fastLogic.KEYWORD28=LED_A_OUT
+fastLogic.KEYWORD29=VOLTAGE_SENS_IN
+fastLogic.KEYWORD30=BUTTONS_IN
+fastLogic.KEYWORD31=ANALOG_IN_A
+fastLogic.KEYWORD32=ANALOG_IN_B

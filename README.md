@@ -21,10 +21,10 @@ ANALOG_IN_A = A2;
 ANALOG_IN_B = A3;
 ```
 
-If you want to use the display, use this [library](https://github.com/avishorp/TM1637).
+If you want to use the **7-segment display**, use this [library](https://github.com/avishorp/TM1637).
 
-The part numbers in the KiCAD files are LCSC part numbers. This means you can directly order at JLCPCB.
-I only get SMT parts assembled due to cost reasons.
+The part numbers in the KiCAD files are LCSC part numbers. This means you can order directly at JLCPCB using the manufacturing files in the [production folder](https://github.com/Neumi/fastLOGIC/tree/main/hardware/version001/fastLOGIC/production).
+I usually only order SMT parts because THT assembly costs extra (and they don't have all parts in stock).
 
 ###  The only parts you need:
 - [relais 5V](https://de.aliexpress.com/item/1005006065653383.html)

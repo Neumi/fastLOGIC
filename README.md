@@ -1,4 +1,6 @@
 # fastLOGIC! An Open-source (industrial) logic controller
+<img alt="banner image" src="/img/top_photo_sensors.jpg">
+
 ### An affordable Arduino-based board designed for straightforward (industrial) logic control, ideal for building small-scale automation and control solutions.
 FastLOGIC! is designed to cater to the automation needs of various applications, especially those with modest logic requirements. Its purpose is to streamline smaller projects by eliminating the need for excessive error-prone breadboarding while retaining flexibility and adaptability.
 
@@ -69,12 +71,15 @@ The placement is largely self-explanatory. If you find yourself uncertain, you c
 
 <img alt="layout screenshot" src="/img/layout001.png">
 
-### Have fun but:
-* **The project is still in development and is only in the prototype stage! Stay tuned!**
-* **this also means that not everything works 100% and is safe**
-* **Do not use in a production environment unsupervised. Use at your own risk**
-* **Input voltage should be between 12...25V. (NO reverse polarity protection currently)**
-* **Do not switch mains voltage with the relais! Only low voltage and currents <5A**
+### Enjoy the project, but keep in mind:
+* **The project is still under development and is currently in the prototype stage! Keep an eye out for updates!**
+* **This also implies that not all functions are guaranteed to work flawlessly and may not be entirely safe**
+* **Avoid unsupervised usage in a production environment. Utilize at your own risk**
+* **Ensure input voltage is between the range of 12 to 25V. (Currently lacking reverse polarity protection)**
+* **Do not use the relay to switch mains voltage! It's suitable only for low voltage and currents below 5A**
+
+
+
 
   
 ### Happy building + coding!

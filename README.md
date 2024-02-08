@@ -1,5 +1,7 @@
 # fastLOGIC! open source industrial controller
-## A cost-effective Arduino-based board designed for simple (industrial) logic control used for small-scale automation and process control applications.
+### A cost-effective Arduino-based board designed for simple (industrial) logic control used for small-scale automation and process control applications.
+
+# Software
 
 The Arduino [library](https://github.com/Neumi/fastLOGIC/tree/main/software/library/fastLOGIC) can be used to get started. A few example sketches show what fastLOGIC! is capable of and how to read sensor data and how to write outputs to the LEDs and relays.
 
@@ -26,7 +28,10 @@ If you want to use the **7-segment display**, use this [library](https://github.
 The part numbers in the KiCAD files are LCSC part numbers. This means you can order directly at JLCPCB using the manufacturing files in the [production folder](https://github.com/Neumi/fastLOGIC/tree/main/hardware/version001/fastLOGIC/production).
 I usually only order SMT parts because THT assembly costs extra (and they don't have all parts in stock).
 
-###  The only parts you need:
+# Hardware
+The placement is pretty much self explanatory. If you are unsure, check out the images below or the 3D view in KiCAD.
+
+###  The only hardware parts you need:
 - [relais 5V](https://de.aliexpress.com/item/1005006065653383.html)
 - [4-bit Common Anode Display](https://de.aliexpress.com/item/1005006101748128.html)
 - [JST connectors 3pin + 4pin](https://de.aliexpress.com/item/4000120545240.html)
@@ -39,6 +44,8 @@ I usually only order SMT parts because THT assembly costs extra (and they don't 
 - [XGZP6847a pressure sensor](https://de.aliexpress.com/item/1005003768236942.html)
 - [High pressure sensor](https://de.aliexpress.com/item/1005005510454084.html)
 - [DS18B20 temperature sensor](https://de.aliexpress.com/item/1005005973956237.html)
+
+---------
 
 ### Have fun but:
 * **The project is still in development and is only in the prototype stage! Stay tuned!**

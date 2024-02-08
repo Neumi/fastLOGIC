@@ -1,4 +1,4 @@
-# fastLOGIC! An Open-source (industrial) logic controller
+# fastLOGIC! open-source (industrial) logic controller
 <img alt="banner image" src="/img/top_photo_sensors.jpg">
 
 ### An affordable Arduino-based board designed for straightforward (industrial) logic control, ideal for building small-scale automation and control solutions.

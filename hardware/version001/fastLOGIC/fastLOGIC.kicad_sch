@@ -2565,6 +2565,10 @@
     (stroke (width 0) (type default))
     (uuid 5b34818e-b13f-47f2-b6d4-492b4ea73b81)
   )
+  (wire (pts (xy 46.736 47.117) (xy 54.102 47.117))
+    (stroke (width 0) (type default))
+    (uuid 604aa667-d28b-408e-ad6e-7b4319ce73c8)
+  )
   (wire (pts (xy 178.943 47.879) (xy 171.323 47.879))
     (stroke (width 0) (type default))
     (uuid 60fd668c-4354-40f8-abae-6dfcd516fbea)
@@ -3514,6 +3518,31 @@
       (project "fastLOGIC"
         (path "/467e73ff-605e-4cd5-9b39-76afb3f5d14a"
           (reference "#PWR073") (unit 1)
+        )
+      )
+    )
+  )
+
+  (symbol (lib_id "power:+5V") (at 39.116 47.117 90) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no)
+    (uuid 14f32bf6-4a76-47d2-996b-3fd84fb807ee)
+    (property "Reference" "#PWR016" (at 42.926 47.117 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Value" "+5V" (at 37.084 46.863 0)
+      (effects (font (size 1.27 1.27)) (justify left))
+    )
+    (property "Footprint" "" (at 39.116 47.117 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "" (at 39.116 47.117 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid 66ece640-626b-4bc6-806f-6008e968f302))
+    (instances
+      (project "fastLOGIC"
+        (path "/467e73ff-605e-4cd5-9b39-76afb3f5d14a"
+          (reference "#PWR016") (unit 1)
         )
       )
     )
@@ -5850,6 +5879,35 @@
       (project "fastLOGIC"
         (path "/467e73ff-605e-4cd5-9b39-76afb3f5d14a"
           (reference "J5") (unit 1)
+        )
+      )
+    )
+  )
+
+  (symbol (lib_id "Device:R") (at 42.926 47.117 90) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
+    (uuid 944b9cff-8bd2-4bad-8fa1-315ad56a7a45)
+    (property "Reference" "R26" (at 42.926 42.418 90)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Value" "R4.7k" (at 42.926 44.958 90)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Footprint" "Resistor_SMD:R_0603_1608Metric" (at 42.926 48.895 90)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "~" (at 42.926 47.117 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "LCSC" "C23162" (at 42.926 47.117 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid 8a2569b2-a269-457a-a2ad-71671426b7b8))
+    (pin "2" (uuid 74078db4-bdc4-4027-a766-c743fc9137f0))
+    (instances
+      (project "fastLOGIC"
+        (path "/467e73ff-605e-4cd5-9b39-76afb3f5d14a"
+          (reference "R26") (unit 1)
         )
       )
     )

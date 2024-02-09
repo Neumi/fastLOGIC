@@ -71,6 +71,11 @@ The placement is largely self-explanatory. If you find yourself uncertain, you c
 
 <img alt="layout screenshot" src="/img/layout001.png">
 
+## Video:
+[![LINK TO VIDEO](https://img.youtube.com/vi/e4RQ7bSTlrE/0.jpg)](https://www.youtube.com/watch?v=e4RQ7bSTlrE)
+
+Follow the project on [hackaday.io](https://hackaday.io/project/194762-fastlogic-open-source-industrial-logic-control)!
+
 ### Enjoy the project, but keep in mind:
 * **The project is still under development and is currently in the prototype stage! Keep an eye out for updates!**
 * **This also implies that not all functions are guaranteed to work flawlessly and may not be entirely safe**

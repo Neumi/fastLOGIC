@@ -24,7 +24,17 @@ void scanI2CBus() {
 
 // function to read from the i2c bus
 uint8_t readDataFromI2C() {
+  Wire.beginTransmission(I2C_DEVICE_ADDRESS);
+  Wire.write(I2C_REGISTER_ADDRESS); 
+  Wire.endTransmission();
 
+  Wire.requestFrom(I2C_DEVICE_ADDRESS, 1);
+  if (Wire.available()) {
+    return Wire.read();
+  } else {
+    Serial.println("Fehler beim Lesen des I2C-Geräts");
+    return 0; // Einen Fehlerwert zurückgeben
+  }
 }
 
 // function to send from the i2c bus

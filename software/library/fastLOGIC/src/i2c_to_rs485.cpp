@@ -33,17 +33,18 @@ uint8_t readDataFromI2C() {
     return Wire.read();
   } else {
     Serial.println("Fehler beim Lesen des I2C-Geräts");
-    return 0; // Einen Fehlerwert zurückgeben
+    return 0; // change to some error message
   }
 }
 
 // function to send from the i2c bus
 void sendDataViaRS485(uint8_t data) {
-  // Möglicherweise RS485 DE/RE Treiberkontrolle hinzufügen
+  //  maybe we need to add RS485 DE/RE driver control
 
   RS485.write(data);
 
-  // Möglicherweise Fehlercode oder Quittung behandeln 
+  // we can add here an error message aswell
+  
 }
 
 void setup() {

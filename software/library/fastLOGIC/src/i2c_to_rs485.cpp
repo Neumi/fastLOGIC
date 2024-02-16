@@ -1,6 +1,7 @@
 #include <Wire.h>
 #include <SoftwareSerial.h>
 
+//pins
 #define RS485_RX_PIN 2
 #define RS485_TX_PIN 3
 #define RS485_DE_PIN 4 
@@ -13,16 +14,17 @@ SoftwareSerial RS485(RS485_RX_PIN, RS485_TX_PIN);
 
 // Function for scanning the i2c bus for devices
 void scanI2CBus() {
-  Serial.println("Suche nach I2C-Geräten...");
+  Serial.println("Looking for I2C devices...");
   for (uint8_t address = 0; address < 128; address++) {
     Wire.beginTransmission(address);
     if (Wire.endTransmission() == 0) {
-      Serial.print("I2C-Gerät gefunden mit der Adresse: 0x");
+      Serial.print("I2C-Device found with the adress: 0x");
       Serial.println(address, HEX);
     }
   }
-  Serial.println("Ende Scan.");
+  Serial.println("End of the scan.");
 }
+
 
 // function to read from the i2c bus
 uint8_t readDataFromI2C() {
@@ -34,7 +36,7 @@ uint8_t readDataFromI2C() {
   if (Wire.available()) {
     return Wire.read();
   } else {
-    Serial.println("Fehler beim Lesen des I2C-Geräts");
+    Serial.println("Error while reading from i2c device");
     return 0; // change to some error message
   }
 }
@@ -42,11 +44,13 @@ uint8_t readDataFromI2C() {
 // function to send from the i2c bus
 void sendDataViaRS485(uint8_t data) {
 
+  //set high for data transmit
   digitalWrite(RS485_DE_PIN, HIGH);
   digitalWrite(RS485_RE_PIN, HIGH);
 
   RS485.write(data);
 
+  //and low for data receive
   digitalWrite(RS485_DE_PIN, LOW);
   digitalWrite(RS485_RE_PIN, LOW);
 
@@ -58,6 +62,7 @@ void setup() {
   Serial.begin(9600);
   RS485.begin(9600);
 
+  //set pins for rs485
   pinMode(RS485_DE_PIN, OUTPUT);
   pinMode(RS485_RE_PIN, OUTPUT);
 
@@ -65,6 +70,8 @@ void setup() {
 }
 
 void loop() {
+
+  //read and send
   uint8_t data = readDataFromI2C();
   sendDataViaRS485(data);
 }

@@ -11,7 +11,15 @@ SoftwareSerial RS485(RS485_RX_PIN, RS485_TX_PIN);
 
 // Function for scanning the i2c bus for devices
 void scanI2CBus() {
-
+  Serial.println("Suche nach I2C-Geräten...");
+  for (uint8_t address = 0; address < 128; address++) {
+    Wire.beginTransmission(address);
+    if (Wire.endTransmission() == 0) {
+      Serial.print("I2C-Gerät gefunden mit der Adresse: 0x");
+      Serial.println(address, HEX);
+    }
+  }
+  Serial.println("Ende Scan.");
 }
 
 // function to read from the i2c bus

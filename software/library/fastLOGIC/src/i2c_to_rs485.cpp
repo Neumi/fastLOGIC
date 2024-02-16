@@ -1,9 +1,11 @@
 #include <Wire.h>
 #include <SoftwareSerial.h>
 
-
 #define RS485_RX_PIN 2
 #define RS485_TX_PIN 3
+#define RS485_DE_PIN 4 
+#define RS485_RE_PIN 5 
+
 #define I2C_DEVICE_ADDRESS 0x42
 #define I2C_REGISTER_ADDRESS 0x00
 
@@ -39,17 +41,25 @@ uint8_t readDataFromI2C() {
 
 // function to send from the i2c bus
 void sendDataViaRS485(uint8_t data) {
-  //  maybe we need to add RS485 DE/RE driver control
+
+  digitalWrite(RS485_DE_PIN, HIGH);
+  digitalWrite(RS485_RE_PIN, HIGH);
 
   RS485.write(data);
 
+  digitalWrite(RS485_DE_PIN, LOW);
+  digitalWrite(RS485_RE_PIN, LOW);
+
   // we can add here an error message aswell
-  
+
 }
 
 void setup() {
   Serial.begin(9600);
   RS485.begin(9600);
+
+  pinMode(RS485_DE_PIN, OUTPUT);
+  pinMode(RS485_RE_PIN, OUTPUT);
 
   scanI2CBus(); 
 }

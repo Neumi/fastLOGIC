@@ -1,11 +1,15 @@
 #include <Wire.h>
 #include <SoftwareSerial.h>
 
+
+//pins
 #define RS485_RX_PIN 2
 #define RS485_TX_PIN 3
+#define RS485_DE_PIN 4 
+#define RS485_RE_PIN 5 
+
 #define I2C_DEVICE_ADDRESS 0x42
 #define I2C_REGISTER_ADDRESS 0x00
-
 // SoftwareSerial-Connection for RS485
 SoftwareSerial RS485(RS485_RX_PIN, RS485_TX_PIN);
 

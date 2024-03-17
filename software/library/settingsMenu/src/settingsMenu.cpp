@@ -29,6 +29,33 @@ void setup() {
   showMainMenu();
 }
 
+const uint8_t characterMap[] = {
+  0b0111111, // "0"
+  0b0000110, // "1"
+  // ... 
+};
+
+//Delayed Text on one display! an idea
+void showText(TM1637Display &display, const char* text, int delayMs = 200) {
+  int textLength = strlen(text);
+
+  for (int i = 0; i < textLength; i++) {
+    char currentChar = text[i];
+    uint8_t pattern = getPatternFromMap(currentChar); 
+    display.setSegments(pattern);
+    delay(delayMs);
+  }
+}
+
+// Helper to get pattern (you'll need to fill this based on your map)
+uint8_t getPatternFromMap(char character) {
+   if (character >= 'A' && character <= 'Z') {
+       return characterMap[character - 'A'];
+   } else {
+       return 0; // Return blank or an error pattern
+   }
+}
+
 
 void showMainMenu() {
 
@@ -66,7 +93,7 @@ void updateDisplay() {
   } else { // Submenu Level
     // Example based on 'baud' submenu
     if (currentTopMenu == 0) { 
-      showText(display1, "basud");
+      showText(display1, "baud");
       showNumber(display3, currentOption + 2400); // Assuming your options are 2400, 4800, ...
     } // ... add more cases
   } 

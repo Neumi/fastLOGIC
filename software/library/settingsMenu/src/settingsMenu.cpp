@@ -29,42 +29,47 @@ void setup() {
   showMainMenu();
 }
 
+
 void showMainMenu() {
 
 }
 
 void handleMenuNavigation(int button1State, int button2State, int button3State) {
-  static int currentMenu = 0; 
-  static int currentSubmenu = 0;
+  static int currentTopMenu = 0;
+  static int currentSubMenu = -1; // -1 indicates main menu level
   static int currentOption = 0;
 
-  if (button1State == LOW) { // Cycle main menus
-    currentMenu = (currentMenu + 1) % 3; // Assuming 3 main menus
-  } else if (button2State == LOW) { // Enter submenu / cycle options
-    if (currentSubmenu == 0) {
-        currentSubmenu = 1; // Enter options mode
+  if (button1State == LOW) { // Cycle top-level menu
+    currentTopMenu = (currentTopMenu + 1) % NUM_TOP_MENUS; // Adjust NUM_TOP_MENUS
+    currentSubMenu = -1; // Reset to main menu level
+  } else if (button2State == LOW) { // Enter Submenu / Cycle Options
+    if (currentSubMenu == -1) {
+      currentSubMenu = 0; // Enter submenu
     } else {
-        currentOption = (currentOption + 1) % 4; // Assuming 4 options 
-    }  
+      currentOption = (currentOption + 1) % NUM_OPTIONS_PER_SUBMENU; // Adjust ...
+    }
   } else if (button3State == LOW) {
-    // Handle value modification (more complex, depends on your settings data)
+    // Handle value modification (more complex)
   }
 }
 
+
 void updateDisplay() {
-  display1.showNumberDec(currentMenu);
+  if (currentSubMenu == -1) { // Main Menu Level
+    if (currentTopMenu == 0) {
+      showText(display1, "baud");
+    } else if (currentTopMenu == 1) {
+      showText(display1, "rs48");
+    } // ... add more cases
 
-  if (currentSubmenu == 0) { 
-    display2.showNumberDec(0); // Indicate main menu mode
-  } else {
-    display2.showNumberDec(currentOption);
-  }
-
-  // Get the value to display. Assuming you have something like:
-  int currentValue = getOptionValue(currentMenu, currentSubmenu, currentOption); 
-
-  // Logic to split currentValue and send it to display3 and display4
-  // ...
+    showText(display3, "Entr"); // Indicate submenu entry
+  } else { // Submenu Level
+    // Example based on 'baud' submenu
+    if (currentTopMenu == 0) { 
+      showText(display1, "basud");
+      showNumber(display3, currentOption + 2400); // Assuming your options are 2400, 4800, ...
+    } // ... add more cases
+  } 
 }
 
 

@@ -36,7 +36,7 @@ const uint8_t characterMap[] = {
 };
 
 //Delayed Text on one display! an idea
-void showText(TM1637Display &display, const char* text, int delayMs = 200) {
+void showTextLoop(TM1637Display &display, const char* text, int delayMs = 200) {
   int textLength = strlen(text);
 
   for (int i = 0; i < textLength; i++) {
@@ -46,6 +46,29 @@ void showText(TM1637Display &display, const char* text, int delayMs = 200) {
     delay(delayMs);
   }
 }
+
+void showText(const char* word) {
+  int wordLength = strlen(word);
+  int displayLimit = 4; 
+
+  for (int i = 0; i < displayLimit; i++) {
+    uint8_t pattern;
+
+    if (i < wordLength) { 
+      pattern = getPatternFromMap(word[i]);
+    } else {
+      pattern = 0; // Or your desired blank pattern
+    }
+
+    switch (i) {
+        case 0: display1.setSegments(pattern); break;
+        case 1: display2.setSegments(pattern); break;
+        case 2: display3.setSegments(pattern); break;
+        case 3: display4.setSegments(pattern); break;
+    }
+  }
+}
+
 
 // Helper to get pattern (you'll need to fill this based on your map)
 uint8_t getPatternFromMap(char character) {
@@ -84,18 +107,18 @@ void handleMenuNavigation(int button1State, int button2State, int button3State) 
 void updateDisplay() {
   if (currentSubMenu == -1) { // Main Menu Level
     if (currentTopMenu == 0) {
-      showText(display1, "baud");
+      showText("baud");
     } else if (currentTopMenu == 1) {
-      showText(display1, "rs48");
+      showText("rs48");
     } // ... add more cases
 
-    showText(display3, "Entr"); // Indicate submenu entry
+    showText(display3, "Entr"); // Indicate submenu entry on displays 3 & 4
   } else { // Submenu Level
     // Example based on 'baud' submenu
     if (currentTopMenu == 0) { 
-      showText(display1, "baud");
-      showNumber(display3, currentOption + 2400); // Assuming your options are 2400, 4800, ...
-    } // ... add more cases
+      showText("baud");
+      showNumber(display3, currentOption + 2400); // Assuming options are 2400, 4800, ...
+    } // ... add more cases 
   } 
 }
 

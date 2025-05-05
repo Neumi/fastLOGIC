@@ -88,3 +88,7 @@ Follow the project on [hackaday.io](https://hackaday.io/project/194762-fastlogic
 
   
 ### Happy building + coding!
+
+
+## Big thanks to the sponsors of this project!
+![sponsor_banner](/img/sponsoring.png)
